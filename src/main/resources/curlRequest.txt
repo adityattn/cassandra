@@ -1,0 +1,39 @@
+
+#get all brands
+curl -X GET \
+  http://localhost:8082/brands \
+  -H 'Cache-Control: no-cache'
+
+#get brand by ID
+curl -X GET \
+  http://localhost:8082/brand/b001 \
+  -H 'Cache-Control: no-cache'
+
+
+#update brand by ID
+curl -X PUT \
+  http://localhost:8082/brand/b001 \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "contentId":"b001",
+    "title": "GOT",
+    "description": "rock the beach"
+}'
+
+#delete brand by ID
+curl -X DELETE \
+  http://localhost:8082/employee/b001 \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/x-www-form-urlencoded'
+
+#create brand
+curl -X POST \
+  http://localhost:8082/brand \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "contentId": "b001",
+    "title": "GOT",
+    "description": "lost mind get activated"
+}'
